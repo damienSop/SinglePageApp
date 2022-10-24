@@ -1,0 +1,47 @@
+version: "3.9"
+
+
+services:
+  server:
+    build: ./app_bo
+    ports:
+      - "5001:5000"
+    depends_on:
+      - database
+    networks:
+      - network-backend
+      - network-frontend
+
+  webapp:
+    build: ./app_fo
+    depends_on:
+      - server
+    ports:
+      - "8080:80"
+    networks:
+      - network-frontend
+    volumes:
+      - ./app_fo:/usr/share/nginx/html
+
+  database:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: monentreprise
+      MYSQL_USER: theboss
+      MYSQL_PASSWORD: Bisous
+      MYSQL_ROOT_PASSWORD: Bisous
+    #ports:
+    #  - 3306:33060
+    expose:
+      - 33060
+    volumes:
+      - ./database/init:/docker-entrypoint-initdb.d
+      - ./database/data:/var/lib/mysql
+    networks:
+      - network-backend
+
+
+networks:
+  network-backend:
+  network-frontend:

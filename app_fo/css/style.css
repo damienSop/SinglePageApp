@@ -1,0 +1,57 @@
+/*Profile */
+body, html {
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+} 
+
+a, a:hover {
+    text-decoration: none;
+}
+
+/*header*/
+.header {
+    background-color: #12adef;
+    color: white;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+/*tabs*/
+.tabs {
+    margin-top: 20px;
+} 
+
+/*tab content*/
+h3 {
+    margin: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+input {
+    margin-top: 10px;
+} 
+.dataprofile {
+    margin-top: 30px;
+}
+
+/* Datatable*/
+table {
+    margin: 50px auto;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+
+th, td {
+    padding: 5px;
+} 
+
+tbody {
+    text-align: center;
+} 

@@ -1,0 +1,1 @@
+CREATE TABLE employes(Matricule VARCHAR(50), Nom VARCHAR(50), Prenom VARCHAR(50), Age INT, Anciennete INT, Salaire FLOAT);

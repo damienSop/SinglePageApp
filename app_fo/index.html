@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Single Page Application</title>
+        <meta charset="UTF-8">
+        <!--css-->
+
+        <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">-->
+
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+
+        <!--js-->
+
+        <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+        
+        <script src="./js/jquery-3.6.0.min.js"></script> 
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <script src="./js/jquery.dataTables.min.js"></script> 
+      
+
+        <!--<script src="./js/cytoscape.min.js"></script>-->
+  
+        <!--<script src="/js/app.js"></script>-->
+
+    </head>
+
+    <body>
+        <!--header-->
+        <div class="container-fluid header">
+            <h1>Single Page Application</h1>
+        </div>
+
+        <!--Nav tabs: onglets dynamiques-->
+        <div class="container tabs">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <!--Home-->
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+              </li>
+              <!--Profile-->
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+              </li>
+              <!--Data table-->
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="datatable-tab" data-bs-toggle="tab" data-bs-target="#datatable" type="button" role="tab" aria-controls="datatable" aria-selected="false">Datatable</button>
+              </li>
+              <!--Cytoscape-->
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="cytoscape-tab" data-bs-toggle="tab" data-bs-target="#cytoscape" type="button" role="tab" aria-controls="cytoscape" aria-selected="false">Cytoscape</button>
+              </li>
+            </ul>
+            
+            <!-- Tab panes: Contenu de chaque onglet -->
+            <div class="tab-content">
+              <!--Home-->
+                <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab"> 
+                    <h3>HOME</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia iusto aut ipsum voluptates. Quisquam, ab dolorum non alias fuga molestias maxime, excepturi aliquam odio ex enim sit. Provident, eius voluptate.</p>
+                </div>
+              <!--Profile-->
+                <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab"> 
+                    <h3>PROFILE</h3>
+                    <div class="container profile">
+                        <form action="http://localhost:5001/getAll" method="post" name="Employe" target="_top">
+                            <!--photo-->
+                            <div id="image">
+                                <img src="./images/image.png" alt="Responsive image" class="img-circle img-responsive" height="130" width="100">
+                            </div>
+                            <!--données profile-->
+                            <div class="container col-xs-12 col-md-10 col-lg-10 dataprofile">
+                                <!--Civilité-->
+                                <div class="dropdown champs">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Civilité</button>
+                                        <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Mr</a></li>
+                                        <li><a class="dropdown-item" href="#">Mme</a></li>
+                                        <li><a class="dropdown-item" href="#">Mlle</a></li>
+                                        </ul>
+                                </div>
+                                <!--Matricule-->
+                                    <input type="text" name="matricule" class="form-control" placeholder="Matricule">
+                                <!--Nom-->
+                                    <input type="text" name="nom" class="form-control" placeholder="Nom">
+                                <!--Prenom-->
+                                    <input type="text" name="prenom" class="form-control" placeholder="Prenom">
+                                <!--Date de naissance-->
+                                    <input type="text"  name="dateNaissance" class="form-control" placeholder="Date de naissance" onfocus="(this.type='date')">
+                                <!--Date ambauche-->
+                                    <input type="text" name="dateAmbauche" class="form-control" placeholder="Date ambauche" onfocus="(this.type='date')">
+                                <!--Salaire brut annuel -->
+                                    <input type="number" name="salaireAnnuel" class="form-control" placeholder="Salaire brut annuel">
+                                <!--Submit button -->
+                                    <input type="submit"  value="Enregistrer">
+                                    <input type="reset">
+                            </div>
+                        </form>
+                    </div>
+              </div>
+              <!--Data table-->
+              <div class="tab-pane" id="datatable" role="tabpanel" aria-labelledby="datatable-tab"> 
+                <h3>DATA TABLE</h3>
+                <table id="employeTable">
+                  <thead>
+                    <tr>
+                      <th>Matricule</th>
+                      <th>Nom</th>
+                      <th>Prenom</th>
+                      <th>Date naissance</th>
+                      <th>Date embauche</th>
+                      <th>Salaire brut annuel</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                      
+                  </tbody>
+                </table>
+              </div>
+              <!--Cytoscape-->
+              <div class="tab-pane" id="cytoscape" role="tabpanel" aria-labelledby="cytoscape-tab">
+                <h3>CYTOSCAPE</h3>
+                <div id="cy">
+
+                </div>
+              </div>
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,75 @@
+const mysqlx = require('@mysql/xdevapi');
+const dotenv = require('dotenv');
+const { Session } = require('inspector');
+const { createConnection } = require('net');
+let instance = null;
+dotenv.config();
+
+/*
+//Connect to database on localhost
+mysqlx
+    .getSession({
+        host: process.env.HOST,
+        user: 'theboss',
+        password: process.env.PASSWORD,
+        port: 33060
+    
+    })
+    .then(function(session) {
+        const database = session.getSchema(process.env.DATABASE); 
+        const myTable = database.getTable(process.env.TABLE); 
+
+        return myTable
+        .insert(['Matricule', 'Nom', 'Prenom', 'Age', 'Anciennete', 'Salaire'])
+        .values(['111111', 'Nnnnn', 'Prnnn', '99', '22', '100000'])
+        .execute()
+
+    });
+    */
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*
+        // Insert SQL Table data
+        return myTable
+        .insert(['Matricule', 'Nom', 'Prenom', 'Age', 'Anciennete', 'Salaire'])
+        .values(['111111', 'Nnnnn', 'Prnnn', '99', '22', '100000'])
+        .execute()
+
+        console.log('Insertion des données en base reussie ! '); 
+        */
+ 
+
+/*const config = {
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE,
+    port: process.env.DB_PORT
+
+}; */  
+
+
+/*
+/connection.connect((err) => {
+    if (err) {
+        console.log(err.message);
+    }
+    console.log('db ' + connection.state);
+}); */
